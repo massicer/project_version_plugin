@@ -6,7 +6,7 @@ on:
       - "**"
 
 jobs:
-  relase_version:
+  build:
     runs-on: ubuntu-latest
 
     steps:
