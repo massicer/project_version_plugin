@@ -1,12 +1,12 @@
-group = "com.flamingosw"
+group = "it.flamingosw"
 version = "0.1.0"
-
 
 plugins {
     `java-gradle-plugin`
     kotlin("jvm") version "1.6.10"
     id("maven-publish")
     id("com.gradle.plugin-publish") version "0.19.0"
+    id("org.jlleitschuh.gradle.ktlint") version "10.2.1"
 }
 
 repositories {
@@ -17,7 +17,8 @@ dependencies {
     implementation(kotlin("stdlib", "1.6.10"))
     testImplementation(kotlin("test"))
     testImplementation(platform("io.kotest:kotest-bom:5.0.3"))
-    testImplementation("io.kotest", "kotest-assertions-core")}
+    testImplementation("io.kotest", "kotest-assertions-core")
+}
 
 tasks.test {
     useJUnitPlatform()
@@ -29,14 +30,13 @@ pluginBundle {
     tags = listOf("version", "properties")
 }
 
-
 gradlePlugin {
     plugins {
         create("project_version_plugin") {
-            id = "com.flamingosw.project_version_plugin"
-            implementationClass = "com.flamingosw.project_version_plugin.VersionPlugin"
+            id = "it.flamingosw.project_version_plugin"
+            implementationClass = "it.flamingosw.project_version_plugin.VersionPlugin"
             displayName = "Extract version plugin"
-            description = "Extract your gradle project version writing it in the application properties file."
+            description = "Extract your gradle project version writing it in the `application.properties` file."
         }
     }
 }

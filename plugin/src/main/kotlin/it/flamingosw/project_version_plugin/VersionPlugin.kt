@@ -1,4 +1,4 @@
-package com.flamingosw.project_version_plugin
+package it.flamingosw.project_version_plugin
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -6,7 +6,8 @@ import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.OutputStream
-import java.util.*
+import java.util.Properties
+
 class VersionPlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
@@ -15,7 +16,7 @@ class VersionPlugin : Plugin<Project> {
                 val propertiesFilePath = "${project.projectDir}/src/main/resources/application.properties"
                 val file = File(propertiesFilePath)
 
-                if(file.exists()){
+                if (file.exists()) {
                     val prop = Properties()
 
                     FileInputStream(file).use {
@@ -23,11 +24,10 @@ class VersionPlugin : Plugin<Project> {
                         prop.setProperty("application.version", project.version.toString())
 
                         val out: OutputStream = FileOutputStream(file)
-                        prop.store(out, "some comment")
+                        prop.store(out, "Extracted from gradle")
                     }
                 }
             }
         }
     }
 }
-
