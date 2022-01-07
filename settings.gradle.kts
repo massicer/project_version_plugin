@@ -9,3 +9,12 @@
 
 rootProject.name = "com.flamingosw.project_version_plugin"
 include("plugin")
+
+
+pluginManagement {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
