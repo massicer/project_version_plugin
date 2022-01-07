@@ -10,7 +10,7 @@ class GradleApply {
     fun `Using the Plugin ID should apply the plugin`() {
         val project = ProjectBuilder.builder().build()
 
-        project.pluginManager.apply("it.flamingosw.project_version_plugin")
+        project.pluginManager.apply("io.github.massicer.project_version_plugin")
 
         project.plugins.getPlugin(VersionPlugin::class.java) shouldNotBe null
     }
