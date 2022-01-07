@@ -1,4 +1,4 @@
-package it.flamingosw.project_version_plugin
+package io.github.massicer.project_version_plugin
 
 import io.kotest.matchers.shouldNotBe
 import org.gradle.testfixtures.ProjectBuilder

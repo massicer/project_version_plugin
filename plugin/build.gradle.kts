@@ -1,4 +1,4 @@
-group = "it.flamingosw"
+group = "io.github.massicer"
 version = "0.1.0"
 
 plugins {
@@ -33,8 +33,8 @@ pluginBundle {
 gradlePlugin {
     plugins {
         create("project_version_plugin") {
-            id = "it.flamingosw.project_version_plugin"
-            implementationClass = "it.flamingosw.project_version_plugin.VersionPlugin"
+            id = "io.github.massicer.project_version_plugin"
+            implementationClass = "io.github.massicer.project_version_plugin.VersionPlugin"
             displayName = "Extract version plugin"
             description = "Extract your gradle project version writing it in the `application.properties` file."
         }

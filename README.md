@@ -5,7 +5,7 @@ This Gradle plugin allows you to add your gradle project version to your `applic
 1. Add the plugin to your project
 ```kts
 plugins {
-    id("it.flamingosw.project_version_plugin") version "<CURRENT_VERSION>"
+    id("io.github.massicer.project_version_plugin") version "<CURRENT_VERSION>"
 }
 ```
 2. Create the properties file if it doesn't already exist
